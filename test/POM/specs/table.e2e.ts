@@ -12,11 +12,6 @@ describe("name of the group", () => {
     ).getText(); // Functional
     await browser.pause(5000);
   });
-  it("should demonstrate the getProperty command", async () => {
-    var elem = await $("https://qavbox.github.io/demo/");
-    var tag = await elem.getProperty("href");
-    console.log(tag); // outputs: https://qavbox.github.io/demo/
-  });
   it("should scroll inside the table", async () => {
     await $("=WebTable").click();
     await (await $("#table02")).scrollIntoView();

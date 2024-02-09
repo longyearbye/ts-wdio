@@ -3,7 +3,6 @@ describe("name of the group", () => {
     browser.url("https://qavbox.github.io/demo/alerts/");
   });
   it("test alerts", async () => {
-    browser.pause(2000);
     await $("[name='commit']").click();
     console.log(await browser.getAlertText());
     await browser.acceptAlert();
@@ -17,13 +16,12 @@ describe("name of the group", () => {
   });
 
   it("verify links", async () => {
-    browser.pause(2000);
     await $("[name='home']").click();
     await $("aria/Links").click();
     await browser.getWindowHandle();
     await browser.newWindow("https://qavalidation.com/demo-form/");
-    await $("[name='multiple']").click();
-    await browser.switchWindow("QAVBOX Demo");
+    await $("[aria-label='Consent']").click();
+    await browser.switchWindow("Registration Form");
     expect(await $$("a").length).toBe(12);
   });
 });

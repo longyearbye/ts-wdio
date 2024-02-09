@@ -18,7 +18,6 @@ describe("name of the group", () => {
   });
 
   it("verify radiobuttons", async () => {
-    browser.pause(2000);
     let exps = await $$("input[name='experience']");
     expect(exps.length).toEqual(8);
     exps.filter(async (el) => {
@@ -27,11 +26,9 @@ describe("name of the group", () => {
         expect(await el.isSelected()).toBe(true);
       }
     });
-    await browser.pause(2000);
   });
 
   it("verify select options", async () => {
-    await browser.pause(2000);
     let select = await $('select[name="sgender"]');
     let options = await select.$$("option");
     expect(options.length).toBe(4);
@@ -40,7 +37,6 @@ describe("name of the group", () => {
   });
 
   it("test scollIntoView option", async () => {
-    await browser.pause(2000);
     await (await $("=Tutorials!")).scrollIntoView({ behavior: "smooth" });
   });
 });
